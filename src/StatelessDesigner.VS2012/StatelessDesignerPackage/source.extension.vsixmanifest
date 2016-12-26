@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="StatelessDesignerPackage..99105463-fc39-4315-af86-48a03b999531" Version="1.4" Language="en-US" Publisher="mrtn" />
+    <DisplayName>Stateless Designer</DisplayName>
+    <Description xml:space="preserve">Visual Studio extension to support visual design of stateless state machines.</Description>
+    <MoreInfo>http://statelessdesigner.codeplex.com</MoreInfo>
+    <License>VSIXLicense.rtf</License>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="ItemTemplates\StatelessDesignerItemTemplate.zip" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="StatelessDesignerEditor" Path="|StatelessDesignerEditor;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="StatelessCodeGenerator" Path="|StatelessCodeGenerator;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>
