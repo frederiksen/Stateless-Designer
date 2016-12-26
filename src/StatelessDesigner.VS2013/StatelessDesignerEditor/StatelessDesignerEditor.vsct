@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary 
+        format that VisualStudio will consume) has the ability to run a preprocessor 
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so 
+        it is possible to define includes and macros with the same syntax used 
+        in C++ files. Using this ability of the compiler here, we include some files 
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+
+  <!--Defines VK_INSERT -->
+  <Extern href="virtkeys.h"/>
+  
+
+
+
+  <!--The Commands section is where we the commands, menus and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidStatelessDesignerEditorPkg">
+    <!-- Inside this section we have different sub-sections: one for the menus, another  
+    for the menu groups, one for the buttons (the actual commands), one for the combos 
+    and the last one for the bitmaps used. Each element is identified by a command id that  
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually  
+    called "command set" and is used to group different command inside a logically related  
+    group; your package should define its own command set in order to avoid collisions  
+    with command ids defined by other packages. -->
+
+    
+    <!--This is the sub-section that defines the menus and toolbars.-->
+    
+    <!-- In this section you can define new menu groups. A menu group is a container for 
+         other menus or buttons (commands); from a visual point of view you can see the 
+         group as the part of a menu contained between two lines. The parent of a group 
+         must be a menu. -->
+    
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button 
+        or combo box in a toolbar. -->
+ 
+  </Commands>
+
+
+  <!--  Within this section you can specify the set of commands defined somewhere else that your  
+        packages uses; for instance if your package uses the standard 'Copy' command, you don't  
+        need to define it, because it is defined by the shell, but you have to use this section  
+        of the VSCT file to notify the shell that your package uses it using this section. -->
+  <!--  Note that with combo boxes we have effectively two commands in one. Below 
+        we have two pairs of commands; 1st pair commandIDFontName and commandIDFontNameHandler, 
+        2nd pair commandIDFontSize and commandIDFontSizeHandler. Note that: 
+        
+        - commandIDFontName and commandIDFontSize handle the displaying and setting of the font 
+          name and font size respectively 
+        - commandIDFontNameHandler and commandIDFontSizeHandler fill the drop down menus 
+          with the available font names and font sizes respectively 
+     -->
+  <!-- Note also that VS will call QueryStatus only on commandIDFontName and  
+       commandIDFontSize, but not on cmdFontNameHandler and commandIDFontSizeHandler whereas 
+       Exec will be called on all four commands. 
+       Note also that Exec will be called for commandIDFontName and commandIDFontSize for 
+       two cases; first to get the current font name or size and second to 
+       set the font name or size whereas the Exec call for commandIDFontNameHandler and  
+       commandIDFontSizeHandler always have the same meaning - fill the drop down menu. 
+       Finally, note that placement for the combo boxes is defined in the combo 
+       section below by the priority and not in the CommandPlacements section. -->
+  <UsedCommands>
+    <UsedCommand guid="guidVSStd97" id="cmdidCut"/>
+    <UsedCommand guid="guidVSStd97" id="cmdidCopy"/>
+    <UsedCommand guid="guidVSStd97" id="cmdidPaste"/>
+    <UsedCommand guid="guidVSStd97" id="cmdidDelete"/>
+  </UsedCommands>
+  
+  <!--Inside this section, we have the ability to place menu groups inside some other menu or 
+      menu / commands inside other groups. 
+      For instance, it is possible to place one of VisualStudio's menus or commands inside one of our  
+      groups or one of our groups inside a menu defined somewhere else. -->
+  <CommandPlacements>
+    <!--Editor Toolbar -->
+    
+  </CommandPlacements>
+
+
+
+    <!-- This section is where you can associate a command with a keyboard shortcut; this association is
+      valid within a specific UI context, that is when the shell is inside a specific mode, e.g. during
+      debugging, editing a file or when the user is using a specific designer. -->
+  <VisibilityConstraints>
+
+    <VisibilityItem guid="guidStatelessDesignerEditorCmdSet" id="IDM_TLB_RTF" context="guidStatelessDesignerEditorEditorFactory" />
+  </VisibilityConstraints>
+
+  <KeyBindings>
+     <!--Keybindings 
+       To define a binding, you have to specify the sequence of keys to press to activate the command  
+       (keystate); 
+       
+       Notice that Visual Studio has a lot of components and commands, so it can be difficult to find a  
+       key binding not used by somebody else; if the key bindings are conflicting only one will be used 
+       and one problem is that the shell will not inform the user that a conflict was found. The only  
+       way to detect the problem is to start Visual Studio under debugger, try to execute any command  
+       and look if there is a message in the output window about a duplicated accelerator found.--> 
+  </KeyBindings>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidStatelessDesignerEditorPkg" value="{12ef88de-3c91-4dab-a581-d0f96f9c45c7}" />
+    
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidStatelessDesignerEditorCmdSet" value="{1b9fde94-68bc-46cd-bfd9-bff41d7d5a4f}">
+
+      <IDSymbol name="IDM_TLB_RTF" value="0x0001" />
+      <IDSymbol name="IDMX_RTF" value="0x0002" />
+      <IDSymbol name="IDM_RTFMNU_ALIGN" value="0x0004" />
+      <IDSymbol name="IDM_RTFMNU_SIZE" value="0x0005" />
+      
+      <IDSymbol name="IDG_RTF_FMT_FONT1" value="0x1000" />
+      <IDSymbol name="IDG_RTF_FMT_FONT2" value="0x1001" />
+      <IDSymbol name="IDG_RTF_FMT_INDENT" value="0x1002" />
+      <IDSymbol name="IDG_RTF_FMT_BULLET" value="0x1003" />
+      
+      <IDSymbol name="IDG_RTF_TLB_FONT1" value="0x1004" />
+      <IDSymbol name="IDG_RTF_TLB_FONT2" value="0x1005" />
+      <IDSymbol name="IDG_RTF_TLB_INDENT" value="0x1006" />
+      <IDSymbol name="IDG_RTF_TLB_BULLET" value="0x1007" />
+      <IDSymbol name="IDG_RTF_TLB_FONT_COMBOS" value="0x1008" />
+      <IDSymbol name="IDG_RTF_CTX_EDIT" value="0x1009" />
+      <IDSymbol name="IDG_RTF_CTX_PROPS" value="0x100a" />
+      <IDSymbol name="IDG_RTF_EDITOR_CMDS" value="0x100b" />
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="commandIDStrike" value="0x0102" />
+    </GuidSymbol>
+    
+    <GuidSymbol name="guidStatelessDesignerEditorEditorFactory" value="{d5d9fb60-96a6-44b0-9534-f02591879e7b}" />
+    
+    <GuidSymbol name="guidImages" value="{648a80a2-03b9-4bc6-97a8-96215de29796}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>

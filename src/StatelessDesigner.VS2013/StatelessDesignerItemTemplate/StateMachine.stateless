@@ -1,0 +1,25 @@
+<!--  
+Stateless Designer statemachine.
+For more information: http://statelessdesigner.codeplex.com/
+-->
+<statemachine xmlns="http://statelessdesigner.codeplex.com/Schema">
+  <settings>
+    <itemname>$safeitemname$</itemname>
+    <namespace>$rootnamespace$</namespace>
+    <class>public</class>
+  </settings>
+  <triggers>     
+    <trigger>Push</trigger>
+    <trigger>Coin</trigger>
+  </triggers>
+  <states>     
+    <state start="yes">Locked</state>
+    <state>Unlocked</state>
+  </states>
+  <transitions>
+    <transition trigger="Push" from="Locked" to="Locked" />
+    <transition trigger="Coin" from="Locked" to="Unlocked" />
+    <transition trigger="Coin" from="Unlocked" to="Unlocked" />
+    <transition trigger="Push" from="Unlocked" to="Locked" />
+  </transitions>
+</statemachine>
