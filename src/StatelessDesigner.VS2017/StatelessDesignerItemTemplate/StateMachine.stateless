@@ -1,6 +1,6 @@
 <!--  
 Stateless Designer statemachine.
-For more information: http://statelessdesigner.codeplex.com/
+For more information: https://github.com/frederiksen/Stateless-Designer
 -->
 <statemachine xmlns="http://statelessdesigner.codeplex.com/Schema">
   <settings>

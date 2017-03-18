@@ -4,7 +4,7 @@
     <Identity Id="StatelessDesignerPackage..56CFAFF4-A9A9-4C0C-B0A1-2B1A5C733E78" Version="1.4" Language="en-US" Publisher="mrtn" />
     <DisplayName>Stateless Designer</DisplayName>
     <Description xml:space="preserve">Visual Studio extension to support visual design of stateless state machines.</Description>
-    <MoreInfo>http://statelessdesigner.codeplex.com</MoreInfo>
+    <MoreInfo>https://github.com/frederiksen/Stateless-Designer</MoreInfo>
     <License>VSIXLicense.rtf</License>
   </Metadata>
   <Installation>
