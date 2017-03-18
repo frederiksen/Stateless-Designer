@@ -8,14 +8,18 @@
     <License>VSIXLicense.rtf</License>
   </Metadata>
   <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="14.0" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="15.0" />
+    <InstallationTarget Version="15.0" Id="Microsoft.VisualStudio.Community" />
+    <InstallationTarget Version="15.0" Id="Microsoft.VisualStudio.Enterprise" />
   </Installation>
   <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.6" />
   </Dependencies>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="File" Path="ItemTemplates" d:TargetPath="ItemTemplates\StatelessDesignerItemTemplate.zip" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="StatelessDesignerEditor" Path="|StatelessDesignerEditor;PkgdefProjectOutputGroup|" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="StatelessCodeGenerator" Path="|StatelessCodeGenerator;PkgdefProjectOutputGroup|" />
   </Assets>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.ManagedDesktop.Prerequisites" Version="[15.0.26208.0,16.0)" DisplayName=".NET desktop development tools" />
+  </Prerequisites>
 </PackageManifest>
