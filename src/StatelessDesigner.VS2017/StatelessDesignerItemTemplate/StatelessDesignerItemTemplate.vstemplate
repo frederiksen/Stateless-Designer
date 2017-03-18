@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Stateless State Machine</Name>
+    <Description>Visual stateless state machine designer</Description>
+    <Icon>StatelessDesignerItemTemplate.ico</Icon>
+    <TemplateID>6a455424-a78f-4077-a296-30d9e8151a14</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>StateMachine.stateless</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem CustomTool="StatelessCodeGenerator" ReplaceParameters="true">StateMachine.stateless</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
