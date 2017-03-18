@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatelessDesignerPackage", "StatelessDesignerPackage\StatelessDesignerPackage.csproj", "{41BD66DB-7CC1-4B3A-9E7E-713F1AB367C4}"
 EndProject
@@ -100,32 +100,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs30
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = StatelessDesignerPackage\\StatelessDesignerPackage.csproj
-		SccProjectName1 = StatelessDesignerPackage
-		SccLocalPath1 = StatelessDesignerPackage
-		SccProjectUniqueName2 = StatelessDesignerItemTemplate\\StatelessDesignerItemTemplate.csproj
-		SccProjectName2 = StatelessDesignerItemTemplate
-		SccLocalPath2 = StatelessDesignerItemTemplate
-		SccProjectUniqueName3 = StatelessDesignerEditor\\StatelessDesignerEditor.csproj
-		SccProjectName3 = StatelessDesignerEditor
-		SccLocalPath3 = StatelessDesignerEditor
-		SccProjectUniqueName4 = StatelessCodeGenerator\\StatelessCodeGenerator.csproj
-		SccProjectName4 = StatelessCodeGenerator
-		SccLocalPath4 = StatelessCodeGenerator
-		SccProjectUniqueName5 = StatelessXml\\StatelessXml.csproj
-		SccProjectName5 = StatelessXml
-		SccLocalPath5 = StatelessXml
-		SccProjectUniqueName6 = StatelessGraph\\StatelessGraph.csproj
-		SccProjectName6 = StatelessGraph
-		SccLocalPath6 = StatelessGraph
-		SccProjectUniqueName7 = UnitTests\\UnitTests.csproj
-		SccProjectName7 = UnitTests
-		SccLocalPath7 = UnitTests
 	EndGlobalSection
 EndGlobal
